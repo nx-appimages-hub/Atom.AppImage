@@ -38,7 +38,6 @@ all:
 	cp --force --recursive $(PWD)/build/usr/share/atom*/* $(PWD)/build/Boilerplate.AppDir/atom
 	
 	rm --force $(PWD)/build/Boilerplate.AppDir/*.desktop
-
 	cp --force $(PWD)/AppDir/*.desktop $(PWD)/build/Boilerplate.AppDir/
 	cp --force $(PWD)/AppDir/*.png $(PWD)/build/Boilerplate.AppDir/ || true
 	cp --force $(PWD)/AppDir/*.svg $(PWD)/build/Boilerplate.AppDir/ || true
