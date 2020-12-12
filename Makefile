@@ -18,22 +18,22 @@ all: clean
 	wget --output-document="$(PWD)/build/build.deb" "https://atom.io/download/deb"
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
 
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'LD_LIBRARY_PATH=$${LD_LIBRARY_PATH}:$${APPDIR}/atom' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'export LD_LIBRARY_PATH=$${LD_LIBRARY_PATH}' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'UUC_VALUE=`cat /proc/sys/kernel/unprivileged_userns_clone 2> /dev/null`' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'if [ -z "$${UUC_VALUE}" ]' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '    then' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '        exec $${APPDIR}/atom/atom --no-sandbox "$${@}"' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '    else' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '        exec $${APPDIR}/atom/atom "$${@}"' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo '    fi' >> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'LD_LIBRARY_PATH=$${LD_LIBRARY_PATH}:$${APPDIR}/atom' 						>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'export LD_LIBRARY_PATH=$${LD_LIBRARY_PATH}' 								>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'UUC_VALUE=`cat /proc/sys/kernel/unprivileged_userns_clone 2> /dev/null`' 	>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '' 																		>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'if [ -z "$${UUC_VALUE}" ]' 												>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '    then' 																>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '        exec $${APPDIR}/atom/atom --no-sandbox "$${@}"' 					>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '    else' 																>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '        exec $${APPDIR}/atom/atom "$${@}"' 								>> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo '    fi' 																	>> $(PWD)/build/Boilerplate.AppDir/AppRun
 
 	cp --force --recursive $(PWD)/build/usr/share/atom*/* $(PWD)/build/Boilerplate.AppDir/atom
 	
@@ -42,7 +42,7 @@ all: clean
 	cp --force $(PWD)/AppDir/*.png $(PWD)/build/Boilerplate.AppDir/ || true
 	cp --force $(PWD)/AppDir/*.svg $(PWD)/build/Boilerplate.AppDir/ || true
 
-	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/build/AppDir $(PWD)/Atom.AppImage
+	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/build/Boilerplate.AppDir $(PWD)/Atom.AppImage
 	chmod +x $(PWD)/Atom.AppImage
 
 
