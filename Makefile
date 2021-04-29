@@ -13,7 +13,7 @@ PWD:=$(shell pwd)
 
 all: clean
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/atom
-	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
+	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 libreadline8
 
 	wget --output-document="$(PWD)/build/build.deb" "https://atom.io/download/deb"
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
