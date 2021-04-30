@@ -13,7 +13,9 @@ PWD:=$(shell pwd)
 
 all: clean
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/atom
-	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 libreadline8
+	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 \
+												libgtk-3-0 libreadline8 libselinux1 libtinfo6 libncurses6 libtinfo5
+
 
 	wget --output-document="$(PWD)/build/build.deb" "https://atom.io/download/deb"
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
@@ -36,7 +38,7 @@ all: clean
 	echo '    fi' 																	>> $(PWD)/build/Boilerplate.AppDir/AppRun
 
 	cp --force --recursive $(PWD)/build/usr/share/atom*/* $(PWD)/build/Boilerplate.AppDir/atom
-	
+
 	rm --force $(PWD)/build/Boilerplate.AppDir/*.desktop
 	cp --force $(PWD)/AppDir/*.desktop $(PWD)/build/Boilerplate.AppDir/
 	cp --force $(PWD)/AppDir/*.png $(PWD)/build/Boilerplate.AppDir/ || true
