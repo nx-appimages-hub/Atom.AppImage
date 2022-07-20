@@ -19,7 +19,7 @@ all: clean init
 	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 \
 	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1 \
 		libtinfo6 libncurses6 libtinfo5 \
-		atom
+		atom libgtk-3-0 libwayland-cursor0
 
 	echo ''                                                           >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo ''                                                           >> $(PWD)/build/Boilerplate.AppDir/AppRun
