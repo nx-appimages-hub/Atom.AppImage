@@ -30,6 +30,8 @@ all: clean init
 	echo 'exec $${APPDIR}/share/atom/atom "$${@}"'                    >> $(PWD)/build/Boilerplate.AppDir/AppRun
 
 	rm --force $(PWD)/build/Boilerplate.AppDir/*.desktop
+	rm --force $(PWD)/build/Boilerplate.AppDir/lib64/libstdc++.so.6*
+
 	cp --force $(PWD)/AppDir/*.desktop $(PWD)/build/Boilerplate.AppDir/
 	cp --force $(PWD)/AppDir/*.png $(PWD)/build/Boilerplate.AppDir/ || true
 	cp --force $(PWD)/AppDir/*.svg $(PWD)/build/Boilerplate.AppDir/ || true
